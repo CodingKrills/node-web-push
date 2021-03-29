@@ -32,6 +32,9 @@ async function send() {
     console.log("service worker registred !")
     // register push 
     console.log("registering push !")
+
+    await navigator.serviceWorker.ready; // Here's the waiting
+
     const subscription = await register.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: convertedVapidKey
